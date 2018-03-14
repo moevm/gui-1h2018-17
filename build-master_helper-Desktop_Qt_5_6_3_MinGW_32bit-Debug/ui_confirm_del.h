@@ -49,7 +49,7 @@ public:
 
     void retranslateUi(QDialog *confirm_del)
     {
-        confirm_del->setWindowTitle(QApplication::translate("confirm_del", "Dialog", Q_NULLPTR));
+        confirm_del->setWindowTitle(QApplication::translate("confirm_del", "\320\237\320\276\320\264\321\202\320\262\320\265\321\200\320\266\320\264\320\265\320\275\320\270\320\265 \321\203\320\264\320\260\320\273\320\265\320\275\320\270\321\217", Q_NULLPTR));
         label->setText(QApplication::translate("confirm_del", "\320\222\321\213 \320\264\320\265\320\271\321\201\321\202\320\262\320\270\321\202\320\265\320\273\321\214\320\275\320\276 \321\205\320\276\321\202\320\270\321\202\320\265 \321\203\320\264\320\260\320\273\320\270\321\202\321\214?", Q_NULLPTR));
     } // retranslateUi
 

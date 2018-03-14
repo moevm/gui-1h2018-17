@@ -218,9 +218,9 @@
      <widget class="QGroupBox" name="init_config_box">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>160</x>
         <y>320</y>
-        <width>221</width>
+        <width>191</width>
         <height>91</height>
        </rect>
       </property>
@@ -362,9 +362,9 @@
       </property>
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>0</y>
-        <width>201</width>
+        <x>170</x>
+        <y>250</y>
+        <width>171</width>
         <height>61</height>
        </rect>
       </property>

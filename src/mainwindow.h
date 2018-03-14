@@ -26,6 +26,10 @@ private slots:
 
     void on_static_init_radio_clicked();
 
+    void on_delete_param_clicked();
+
+    void on_delete_effect_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

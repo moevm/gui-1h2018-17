@@ -123,7 +123,7 @@ public:
         create_param->setGeometry(QRect(120, 260, 161, 31));
         init_config_box = new QGroupBox(tab_2);
         init_config_box->setObjectName(QStringLiteral("init_config_box"));
-        init_config_box->setGeometry(QRect(130, 320, 221, 91));
+        init_config_box->setGeometry(QRect(160, 320, 191, 91));
         static_init_radio = new QRadioButton(init_config_box);
         static_init_radio->setObjectName(QStringLiteral("static_init_radio"));
         static_init_radio->setGeometry(QRect(60, 50, 101, 21));
@@ -158,7 +158,7 @@ public:
         effect_work_box = new QGroupBox(tab_2);
         effect_work_box->setObjectName(QStringLiteral("effect_work_box"));
         effect_work_box->setEnabled(true);
-        effect_work_box->setGeometry(QRect(160, 0, 201, 61));
+        effect_work_box->setGeometry(QRect(170, 250, 171, 61));
         label_2 = new QLabel(effect_work_box);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(70, 20, 111, 31));

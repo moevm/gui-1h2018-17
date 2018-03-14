@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "confirm_del.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -53,4 +54,16 @@ void MainWindow::on_static_init_radio_clicked()
     ui->param_list_init->setEnabled(false);
     ui->ok_init_config->setEnabled(false);
     ui->cancel_init_config->setEnabled(false);
+}
+
+void MainWindow::on_delete_param_clicked()
+{
+    confirm_del *wdg = new confirm_del();
+    wdg->show();
+}
+
+void MainWindow::on_delete_effect_clicked()
+{
+    confirm_del *wdg = new confirm_del();
+    wdg->show();
 }
