@@ -24,12 +24,288 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
-      <string>Tab 1</string>
+      <string>Ведение игры</string>
      </attribute>
+     <widget class="QListWidget" name="characters_list">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>171</width>
+        <height>192</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Персонаж А</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж Б</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж В</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж Г</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж Д</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж Е</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж Ж</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж З</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж И</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж К</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж Л</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж М</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж Н</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Персонажи</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_editchar">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>30</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Редактировать...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_editeffects">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>80</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Наложить/удалить
+эффект...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_fight">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>130</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Начать сражение!</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="character_text">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>30</y>
+        <width>401</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Персонаж А
+
+Описание: этот персонаж имеет большое, красивое и длинное описание, на которое мастер может опираться для описания сцены
+
+Действующие эффекты: эффект лени разработчика (разработчику лень описывать эффект)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>10</y>
+        <width>191</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Описание и действующие эффекты</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="scenes_list">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>171</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Сцена А</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена Б</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена В</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена Г</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена Д</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена Е</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена Ж</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена З</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена И</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена К</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена Л</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Сцены</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="scene_text">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>250</y>
+        <width>531</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Сцена А
+
+Описание: эта сцена имеет большое и красочное описание; башни взрываются, вертолеты падают, мастер ведет игру, разработчик придумывает этот текст</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>230</y>
+        <width>191</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Описание текущей сцены</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -478,17 +754,9 @@
      <x>0</x>
      <y>0</y>
      <width>737</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
