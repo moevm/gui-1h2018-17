@@ -16,10 +16,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->effect_work_box->setVisible(false);
     ui->param_work_box->setVisible(false);
     ui->init_config_box->setVisible(false);
+
+    this->model = new Model();
 }
 
 MainWindow::~MainWindow()
 {
+    delete this->model;
     delete ui;
 }
 

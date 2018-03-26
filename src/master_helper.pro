@@ -17,13 +17,15 @@ SOURCES += main.cpp\
     confirm_del.cpp \
     editparametersform.cpp \
     combatbeginform.cpp \
-    combatform.cpp
+    combatform.cpp \
+    model.cpp
 
 HEADERS  += mainwindow.h \
     confirm_del.h \
     editparametersform.h \
     combatbeginform.h \
-    combatform.h
+    combatform.h \
+    model.h
 
 FORMS    += mainwindow.ui \
     confirm_del.ui \
