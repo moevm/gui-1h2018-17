@@ -1,6 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
 #include "confirm_del.h"
+#include "editparametersform.h"
+#include "combatbeginform.h"
+#include "combatform.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -66,4 +70,29 @@ void MainWindow::on_delete_effect_clicked()
 {
     confirm_del *wdg = new confirm_del();
     wdg->show();
+}
+
+void MainWindow::on_button_editchar_clicked()
+{
+    EditParametersForm *editparm = new EditParametersForm();
+    editparm->exec();
+
+    if (editparm->saveChanges) {
+        //модифицировать модель
+    }
+
+    delete editparm;
+}
+
+void MainWindow::on_button_fight_clicked()
+{
+    CombatBeginForm *cbegin = new CombatBeginForm();
+    cbegin->exec();
+
+    if (cbegin->startCombat) {
+        CombatForm *cmb = new CombatForm();
+        cmb->show();
+    }
+
+    delete cbegin;
 }

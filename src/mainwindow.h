@@ -30,6 +30,10 @@ private slots:
 
     void on_delete_effect_clicked();
 
+    void on_button_editchar_clicked();
+
+    void on_button_fight_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
