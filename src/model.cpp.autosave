@@ -1,9 +1,6 @@
 #include "model.h"
 
-Model::Model(QObject *parent) : QObject(parent)
-{
-
-}
+Model::Model(QObject *parent) : QObject(parent) {}
 
 QList<QString>*getCharacters(){
     QString *character1 = new QString("Дуся");
@@ -116,7 +113,6 @@ QString *getCharacterDescription(QString &character) {
         *character_description = "нехороший человек";
     return character_description;
 }
-
 
 QString *getSceneDescription(QString &scene) {
     QString *scene_description = new QString();
