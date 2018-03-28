@@ -14,10 +14,21 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    confirm_del.cpp
+    confirm_del.cpp \
+    editparametersform.cpp \
+    combatbeginform.cpp \
+    combatform.cpp \
+    model.cpp
 
 HEADERS  += mainwindow.h \
-    confirm_del.h
+    confirm_del.h \
+    editparametersform.h \
+    combatbeginform.h \
+    combatform.h \
+    model.h
 
 FORMS    += mainwindow.ui \
-    confirm_del.ui
+    confirm_del.ui \
+    editparametersform.ui \
+    combatbeginform.ui \
+    combatform.ui

@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "model.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -10,6 +12,9 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
+private:
+    Model *model;
 
 public:
     explicit MainWindow(QWidget *parent = 0);
@@ -29,6 +34,10 @@ private slots:
     void on_delete_param_clicked();
 
     void on_delete_effect_clicked();
+
+    void on_button_editchar_clicked();
+
+    void on_button_fight_clicked();
 
 private:
     Ui::MainWindow *ui;
