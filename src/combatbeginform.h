@@ -2,6 +2,7 @@
 #define COMBATBEGINFORM_H
 
 #include <QDialog>
+#include <QList>
 
 namespace Ui {
 class CombatBeginForm;
@@ -13,6 +14,8 @@ class CombatBeginForm : public QDialog
 
 public:
     bool startCombat;
+
+    CombatBeginForm(QList<QString> *characters);
 
     explicit CombatBeginForm(QWidget *parent = 0);
     ~CombatBeginForm();

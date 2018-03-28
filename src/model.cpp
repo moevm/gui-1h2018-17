@@ -5,7 +5,7 @@ Model::Model(QObject *parent) : QObject(parent)
 
 }
 
-QList<QString>*getCharacters(){
+QList<QString> *Model::getCharacters(){
     QString *character1 = new QString("Дуся");
     QString *character2 = new QString("Олень");
     QString *character3 = new QString("Старик-рассказчик");
@@ -18,7 +18,7 @@ QList<QString>*getCharacters(){
     return character_list;
 }
 
-QList<QString> *getScenes() {
+QList<QString> *Model::getScenes() {
     QString *scene1 = new QString("У дуба");
     QString *scene2 = new QString("У реки");
     QString *scene3 = new QString("В избушке");
@@ -31,7 +31,7 @@ QList<QString> *getScenes() {
     return scene_list;
 }
 
-QList< QPair<QString, QString> > *getParameters(QString &character){
+QList< QPair<QString, QString> > *Model::getParameters(QString const &character){
     QPair<QString, QString> *pair = new QPair<QString, QString>();
     QList < QPair<QString, QString> > *param_list = new QList < QPair<QString, QString> >();
     if (character == "Дуся") {
@@ -72,7 +72,7 @@ QList< QPair<QString, QString> > *getParameters(QString &character){
     return param_list;
 }
 
-QList<QString> *getEffects(QString &character) {
+QList<QString> *Model::getEffects(QString const &character) {
     QString *effect = new QString();
     QList <QString> *effect_list = new QList <QString>();
     if (character == "Дуся") {
@@ -101,7 +101,7 @@ QList<QString> *getEffects(QString &character) {
     return effect_list;
 }
 
-QString *getCharacterDescription(QString &character) {
+QString *Model::getCharacterDescription(QString const &character) {
     QString *character_description = new QString();
     if (character == "Дуся")
         *character_description = "opisanie";
@@ -118,7 +118,7 @@ QString *getCharacterDescription(QString &character) {
 }
 
 
-QString *getSceneDescription(QString &scene) {
+QString *Model::getSceneDescription(QString const &scene) {
     QString *scene_description = new QString();
     if (scene == "У дуба")
         *scene_description = "opisanie";

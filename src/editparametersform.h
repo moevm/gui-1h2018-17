@@ -2,6 +2,8 @@
 #define EDITPARAMETERSFORM_H
 
 #include <QDialog>
+#include <QList>
+#include <QPair>
 
 namespace Ui {
 class EditParametersForm;
@@ -13,6 +15,8 @@ class EditParametersForm : public QDialog
 
 public:
     bool saveChanges;
+
+    EditParametersForm(QList< QPair<QString, QString> > *parameters);
 
     explicit EditParametersForm(QWidget *parent = 0);
     ~EditParametersForm();

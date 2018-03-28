@@ -9,6 +9,14 @@ CombatBeginForm::CombatBeginForm(QWidget *parent) :
     this->startCombat = false;
 }
 
+CombatBeginForm::CombatBeginForm(QList<QString> *characters) : CombatBeginForm() {
+    for (auto chr: *characters) {
+        ui->comboBox->addItem(chr);
+    }
+
+    delete characters;
+}
+
 CombatBeginForm::~CombatBeginForm()
 {
     delete ui;

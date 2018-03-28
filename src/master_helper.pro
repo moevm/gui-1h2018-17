@@ -18,17 +18,20 @@ SOURCES += main.cpp\
     editparametersform.cpp \
     combatbeginform.cpp \
     combatform.cpp \
-    model.cpp
+    model.cpp \
+    editeffectsform.cpp
 
 HEADERS  += mainwindow.h \
     confirm_del.h \
     editparametersform.h \
     combatbeginform.h \
     combatform.h \
-    model.h
+    model.h \
+    editeffectsform.h
 
 FORMS    += mainwindow.ui \
     confirm_del.ui \
     editparametersform.ui \
     combatbeginform.ui \
-    combatform.ui
+    combatform.ui \
+    editeffectsform.ui

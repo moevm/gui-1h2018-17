@@ -13,10 +13,10 @@ public:
 
     QList<QString>                      *getCharacters();
     QList<QString>                      *getScenes();
-    QList< QPair<QString, QString> >    *getParameters(QString &character);
-    QList<QString>                      *getEffects(QString &character);
-    QString                             *getCharacterDescription(QString &character);
-    QString                             *getSceneDescription(QString &scene);
+    QList< QPair<QString, QString> >    *getParameters(QString const &character);
+    QList<QString>                      *getEffects(QString const &character);
+    QString                             *getCharacterDescription(QString const &character);
+    QString                             *getSceneDescription(QString const &scene);
 
 signals:
 
