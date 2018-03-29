@@ -3,6 +3,7 @@
 
 #include "confirm_del.h"
 #include "editparametersform.h"
+#include "editeffectsform.h"
 #include "combatbeginform.h"
 #include "combatform.h"
 
@@ -18,6 +19,21 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->init_config_box->setVisible(false);
 
     this->model = new Model();
+
+    ui->characters_list->clear();
+    for (auto chr: *(this->model->getCharacters())) {
+        ui->characters_list->addItem(chr);
+    }
+    ui->character_text->clear();
+
+    ui->scenes_list->clear();
+    for (auto scene: *(this->model->getScenes())) {
+        ui->scenes_list->addItem(scene);
+    }
+    ui->scene_text->clear();
+
+    ui->button_editchar->setEnabled(false);
+    ui->button_editeffects->setEnabled(false);
 }
 
 MainWindow::~MainWindow()
@@ -77,7 +93,7 @@ void MainWindow::on_delete_effect_clicked()
 
 void MainWindow::on_button_editchar_clicked()
 {
-    EditParametersForm *editparm = new EditParametersForm();
+    EditParametersForm *editparm = new EditParametersForm(this->model->getParameters(ui->characters_list->currentItem()->text()));
     editparm->exec();
 
     if (editparm->saveChanges) {
@@ -89,7 +105,7 @@ void MainWindow::on_button_editchar_clicked()
 
 void MainWindow::on_button_fight_clicked()
 {
-    CombatBeginForm *cbegin = new CombatBeginForm();
+    CombatBeginForm *cbegin = new CombatBeginForm(this->model->getCharacters());
     cbegin->exec();
 
     if (cbegin->startCombat) {
@@ -98,4 +114,41 @@ void MainWindow::on_button_fight_clicked()
     }
 
     delete cbegin;
+}
+
+void MainWindow::on_characters_list_itemSelectionChanged()
+{
+    QString text = "";
+    text += ui->characters_list->currentItem()->text();
+    text += "\n\nОписание: ";
+    text += this->model->getCharacterDescription(ui->characters_list->currentItem()->text());
+    text += "\n\nДействующие эффекты: ";
+
+    auto effectlist = *(this->model->getEffects(ui->characters_list->currentItem()->text()));
+    for (auto effect = effectlist.begin(); effect != effectlist.end(); ) {
+        text += *effect;
+        if (++effect != effectlist.end()) text += ", ";
+    }
+
+    ui->character_text->document()->setPlainText(text);
+
+    ui->button_editchar->setEnabled(true);
+    ui->button_editeffects->setEnabled(true);
+}
+
+void MainWindow::on_scenes_list_itemSelectionChanged()
+{
+    QString text = "";
+    text += ui->scenes_list->currentItem()->text();
+    text += "\n\nОписание: ";
+    text += this->model->getSceneDescription(ui->scenes_list->currentItem()->text());
+
+    ui->scene_text->document()->setPlainText(text);
+}
+
+void MainWindow::on_button_editeffects_clicked()
+{
+    EditEffectsForm *efform = new EditEffectsForm(this->model->getEffects(ui->characters_list->currentItem()->text()));
+    efform->exec();
+    delete efform;
 }

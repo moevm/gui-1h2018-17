@@ -39,6 +39,12 @@ private slots:
 
     void on_button_fight_clicked();
 
+    void on_characters_list_itemSelectionChanged();
+
+    void on_scenes_list_itemSelectionChanged();
+
+    void on_button_editeffects_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
