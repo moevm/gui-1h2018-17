@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>737</width>
+    <height>487</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Помощник мастера настольной ролевой игры</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>741</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Ведение игры</string>
+     </attribute>
+     <widget class="QListWidget" name="characters_list">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>171</width>
+        <height>192</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Персонаж А</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж Б</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж В</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж Г</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж Д</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж Е</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж Ж</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж З</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж И</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж К</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж Л</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж М</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Персонаж Н</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Персонажи</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_editchar">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>30</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Редактировать...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_editeffects">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>80</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Наложить/удалить
+эффект...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_fight">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>130</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Начать сражение!</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="character_text">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>30</y>
+        <width>401</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Персонаж А
+
+Описание: этот персонаж имеет большое, красивое и длинное описание, на которое мастер может опираться для описания сцены
+
+Действующие эффекты: эффект лени разработчика (разработчику лень описывать эффект)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>10</y>
+        <width>191</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Описание и действующие эффекты</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="scenes_list">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>171</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Сцена А</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена Б</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена В</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена Г</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена Д</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена Е</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена Ж</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена З</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена И</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена К</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Сцена Л</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Сцены</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="scene_text">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>250</y>
+        <width>531</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Сцена А
+
+Описание: эта сцена имеет большое и красочное описание; башни взрываются, вертолеты падают, мастер ведет игру, разработчик придумывает этот текст</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>230</y>
+        <width>191</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Описание текущей сцены</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Настройка</string>
+     </attribute>
+     <widget class="QGroupBox" name="config_buttons">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>291</width>
+        <height>411</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QPushButton" name="param_work">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>40</y>
+         <width>201</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Работа с параметрами персонажей</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="init_config">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>130</y>
+         <width>201</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Настройка инициативы</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="effects_work">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>210</y>
+         <width>201</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Работа с основными эффектами</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="param_work_box">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>10</y>
+        <width>401</width>
+        <height>411</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="label">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>30</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Выберите параметр</string>
+       </property>
+      </widget>
+      <widget class="QListWidget" name="param_list">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>50</y>
+         <width>256</width>
+         <height>121</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>Параметр 1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Параметр 2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Параметр 3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Параметр 4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Параметр 5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Параметр 6</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Параметр 7</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QPushButton" name="edit_param">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>210</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Редактировать</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="delete_param">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>210</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Удалить</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="create_param">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>260</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Создать параметр</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="init_config_box">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>320</y>
+        <width>191</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QRadioButton" name="static_init_radio">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>50</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Статическая</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="dynamic_init_radio">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>90</y>
+         <width>101</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Динамическая</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>10</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Инициатива:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>150</y>
+         <width>251</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Выберите вляиющий на инициативу параметр:</string>
+       </property>
+      </widget>
+      <widget class="QListWidget" name="param_list_init">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>180</y>
+         <width>256</width>
+         <height>131</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>Параметр 1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Параметр 2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Параметр 3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Параметр 4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Параметр 5</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QPushButton" name="ok_init_config">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>330</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>OK</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="cancel_init_config">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>330</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Отмена</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="effect_work_box">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>250</y>
+        <width>171</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>20</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Выберите эффект</string>
+       </property>
+      </widget>
+      <widget class="QListWidget" name="effect_list">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>50</y>
+         <width>256</width>
+         <height>121</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>Эффект 1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Эффект 2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Эффект 3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Эффект 4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Эффект 5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Эффект 6</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Эффект 7</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QPushButton" name="edit_effect">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>210</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Редактировать</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="delete_effect">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>210</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Удалить</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="create_effect">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>260</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Создать эффект</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>737</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
