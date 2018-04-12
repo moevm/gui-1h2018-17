@@ -7,6 +7,8 @@
 #include "combatbeginform.h"
 #include "combatform.h"
 
+#include "param_list.h"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -19,6 +21,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->init_config_box->setVisible(false);
 
     this->model = new Model();
+    this->model->addCharacter(new Person("Редиска"));
+    this->model->addCharacter(new Person("Волшебный олень"));
+    this->model->addCharacter(new Person("Гудвин"));
 
     ui->characters_list->clear();
     for (auto chr: *(this->model->getCharacters())) {
@@ -34,6 +39,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->button_editchar->setEnabled(false);
     ui->button_editeffects->setEnabled(false);
+
+
+    //это временная замена для param_list
+    QString param_list[4] = {"хитрость", "убийственность", "магия", "сила"};
 }
 
 MainWindow::~MainWindow()
@@ -119,15 +128,18 @@ void MainWindow::on_button_fight_clicked()
 void MainWindow::on_characters_list_itemSelectionChanged()
 {
     QString text = "";
+    QString charName = ui->characters_list->currentItem()->text();
     text += ui->characters_list->currentItem()->text();
     text += "\n\nОписание: ";
-    text += this->model->getCharacterDescription(ui->characters_list->currentItem()->text());
+    text += this->model->getCharacterDescription(charName);
     text += "\n\nДействующие эффекты: ";
 
-    auto effectlist = *(this->model->getEffects(ui->characters_list->currentItem()->text()));
-    for (auto effect = effectlist.begin(); effect != effectlist.end(); ) {
+    auto effectlist = this->model->getEffects(charName);
+    if (effectlist == nullptr) return;
+
+    for (auto effect = effectlist->begin(); effect != effectlist->end(); ) {
         text += *effect;
-        if (++effect != effectlist.end()) text += ", ";
+        if (++effect != effectlist->end()) text += ", ";
     }
 
     ui->character_text->document()->setPlainText(text);
@@ -148,7 +160,16 @@ void MainWindow::on_scenes_list_itemSelectionChanged()
 
 void MainWindow::on_button_editeffects_clicked()
 {
-    EditEffectsForm *efform = new EditEffectsForm(this->model->getEffects(ui->characters_list->currentItem()->text()));
+    QString charName = ui->characters_list->currentItem()->text();
+
+    EditEffectsForm *efform = new EditEffectsForm(this->model->getEffects(charName));
     efform->exec();
+
+    if (efform->isChanged) {
+        this->model->editEffects(charName, efform->effects);
+        this->on_characters_list_itemSelectionChanged();
+        this->model->updated();
+    }
+
     delete efform;
 }
