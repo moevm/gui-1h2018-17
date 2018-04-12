@@ -7,6 +7,8 @@
 #include "combatbeginform.h"
 #include "combatform.h"
 
+#include "param_list.h"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -34,6 +36,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->button_editchar->setEnabled(false);
     ui->button_editeffects->setEnabled(false);
+
+
+    //это временная замена для param_list
+    QString param_list[4] = {"хитрость", "убийственность", "магия", "сила"};
+
 }
 
 MainWindow::~MainWindow()

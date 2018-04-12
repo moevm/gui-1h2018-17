@@ -19,7 +19,13 @@ SOURCES += main.cpp\
     combatbeginform.cpp \
     combatform.cpp \
     model.cpp \
-    editeffectsform.cpp
+    editeffectsform.cpp \
+    player.cpp \
+    param_list.cpp \
+    parameter.cpp \
+    effect.cpp \
+    person.cpp \
+    scene.cpp
 
 HEADERS  += mainwindow.h \
     confirm_del.h \
@@ -27,7 +33,13 @@ HEADERS  += mainwindow.h \
     combatbeginform.h \
     combatform.h \
     model.h \
-    editeffectsform.h
+    editeffectsform.h \
+    player.h \
+    param_list.h \
+    parameter.h \
+    effect.h \
+    person.h \
+    scene.h
 
 FORMS    += mainwindow.ui \
     confirm_del.ui \
