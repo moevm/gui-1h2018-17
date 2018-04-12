@@ -7,7 +7,7 @@ class Player
 public:
     Player();
     QString name;
-    person* person;
+    Person* person;
 };
 
 #endif // PLAYER_H

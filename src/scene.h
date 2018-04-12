@@ -10,7 +10,7 @@ public:
     scene();
     QString name;
     QString descr;
-    QList<effect>* effects;
+    QList<Effect>* effects;
 };
 
 #endif // SCENE_H

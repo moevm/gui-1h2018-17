@@ -1,6 +1,11 @@
 #include "effect.h"
 
-effect::effect()
+Effect::Effect()
 {
 
+}
+
+Effect::Effect(QString name)
+{
+    this->name = name;
 }

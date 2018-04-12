@@ -2,16 +2,19 @@
 #define PERSON_H
 
 #include <QString>
+#include <QList>
 #include "parameter.h"
 #include "effect.h"
 
-class person
+class Person
 {
 public:
-    person();
+    Person();
+    Person(QString name);
+
     QString name;
-    QList<parameter>* parameters;
-    QList<effect>* effects;
+    QList<Parameter *> parameters;
+    QList<Effect *> effects;
 };
 
 #endif // PERSON_H

@@ -1,6 +1,10 @@
 #include "person.h"
 
-person::person()
+Person::Person()
 {
 
+}
+
+Person::Person(QString name) {
+    this->name = name;
 }
