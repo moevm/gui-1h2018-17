@@ -2,19 +2,16 @@
 
 Model::Model(QObject *parent) : QObject(parent)
 {
-
+    this->characters.clear();
 }
 
 QList<QString> *Model::getCharacters(){
-    QString *character1 = new QString("Дуся");
-    QString *character2 = new QString("Олень");
-    QString *character3 = new QString("Старик-рассказчик");
-    QString *character4 = new QString("Редиска");
     QList<QString> *character_list = new QList<QString>();
-    character_list->append(*character1);
-    character_list->append(*character2);
-    character_list->append(*character3);
-    character_list->append(*character4);
+
+    for (auto chr: this->characters) {
+        character_list->append(chr->name);
+    }
+
     return character_list;
 }
 
@@ -73,9 +70,20 @@ QList< QPair<QString, QString> > *Model::getParameters(QString const &character)
 }
 
 QList<QString> *Model::getEffects(QString const &character) {
-    QString *effect = new QString();
-    QList <QString> *effect_list = new QList <QString>();
-    if (character == "Дуся") {
+    QList <QString> *effect_list = nullptr;
+
+    for (auto chr: this->characters) {
+        if (chr->name == character) {
+            effect_list = new QList<QString>();
+
+            for (auto effect: chr->effects)
+                effect_list->append(effect->name);
+            break;
+        }
+    }
+
+    //QString *effect = new QString();
+    /*if (character == "Дуся") {
         *effect = "Невидимость";
         effect_list->append(*effect);
     }
@@ -97,7 +105,7 @@ QList<QString> *Model::getEffects(QString const &character) {
     if(character == "Редиска") {
         *effect = "Хитрый взгляд";
         effect_list->append(*effect);
-    }
+    }*/
     return effect_list;
 }
 
@@ -134,3 +142,38 @@ QString *Model::getSceneDescription(QString const &scene) {
     return scene_description;
 }
 
+void Model::addCharacter(Person *character) {
+    this->characters.append(character);
+}
+
+void Model::editParameters(QString charName, QList<QPair<QString, QString> > *newParms)
+{
+    QString name;
+    int value;
+
+    /*for (auto chr: this->characters) {
+        if (chr->name == charName) {
+            for (auto pair: *newParms) {
+                name = pair.first;
+                value = pair.second.toInt();
+                for (auto param: chr->parameters) {
+                    if (param.)
+                }
+            }
+
+            break;
+        }
+    }*/
+}
+
+void Model::editEffects(QString charName, QList<QString> *effects)
+{
+    for (auto chr: this->characters) {
+        if (chr->name == charName) {
+            chr->effects.clear();
+            for (auto effect: *effects) {
+                chr->effects.append(new Effect(effect));
+            }
+        }
+    }
+}
