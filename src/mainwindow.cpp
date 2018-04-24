@@ -8,6 +8,8 @@
 #include "combatform.h"
 
 #include "param_list.h"
+#include "person.h"
+#include "parameter.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -21,9 +23,22 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->init_config_box->setVisible(false);
 
     this->model = new Model();
-    this->model->addCharacter(new Person("Редиска"));
-    this->model->addCharacter(new Person("Волшебный олень"));
-    this->model->addCharacter(new Person("Гудвин"));
+    this->model->addCharacter(new Person("Редиска", "нехороший человек"));
+
+    //for debug-проверяю,что параметры прикреплятся к персонажу корректно. вызов- в model
+    Person* a = this->model->getCharacters_debug().first();
+    Parameter* p= new Parameter(0,600);
+    a->parameters.append(p);
+    p = new Parameter(1,900);
+    a->parameters.append(p);
+
+
+    this->model->addCharacter(new Person("Олень","большие рога"));
+    this->model->addCharacter(new Person("Гудвин", "волшебник"));
+
+    this->model->addScene(new scene("У дуба", "Описание"));
+    this->model->addScene(new scene("В избушке","Opisaniye"));
+    this->model->addScene(new scene("Сражение", "Битва"));
 
     ui->characters_list->clear();
     for (auto chr: *(this->model->getCharacters())) {
@@ -40,9 +55,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->button_editchar->setEnabled(false);
     ui->button_editeffects->setEnabled(false);
 
-
-    //это временная замена для param_list
-    QString param_list[4] = {"хитрость", "убийственность", "магия", "сила"};
 }
 
 MainWindow::~MainWindow()

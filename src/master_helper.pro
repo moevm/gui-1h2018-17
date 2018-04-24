@@ -38,8 +38,8 @@ HEADERS  += mainwindow.h \
     param_list.h \
     parameter.h \
     effect.h \
-    person.h \
-    scene.h
+    scene.h \
+    person.h
 
 FORMS    += mainwindow.ui \
     confirm_del.ui \
