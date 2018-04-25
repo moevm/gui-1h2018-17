@@ -10,9 +10,10 @@ class Person
 {
 public:
     Person();
-    Person(QString name);
+    Person(QString name, QString descr);
 
     QString name;
+    QString description;
     QList<Parameter *> parameters;
     QList<Effect *> effects;
 };

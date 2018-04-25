@@ -8,6 +8,7 @@ class scene
 {
 public:
     scene();
+    scene(QString name, QString descr);
     QString name;
     QString descr;
     QList<Effect>* effects;
