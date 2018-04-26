@@ -46,7 +46,7 @@ QList< QPair<QString, QString> > *Model::getParameters(QString const &character)
         if (chr->name == character) {
             for (auto param: chr->parameters) {
                 pair->first = param_list[param->id_from_param_list];
-                pair->second = param->getValue();
+                pair->second = QString::number(param->getValue());
                 this_person_param_list->append(*pair);
             }
         }
@@ -188,28 +188,28 @@ void Model::addCharacter(Person *character) {
     this->characters.append(character);
 }
 
-void Model::addScene(scene *scena) {
+void Model::addScene(Scene *scena) {
     this->scenes.append(scena);
 }
 
 void Model::editParameters(QString charName, QList<QPair<QString, QString> > *newParms)
 {
-    QString name;
-    int value;
+    int i;
 
-    /*for (auto chr: this->characters) {
+    for (auto chr: this->characters) {
         if (chr->name == charName) {
-            for (auto pair: *newParms) {
-                name = pair.first;
-                value = pair.second.toInt();
-                for (auto param: chr->parameters) {
-                    if (param.)
+            chr->parameters.clear();
+            for (auto par: *(newParms)) {
+                for (i = 0; i<this->param_length; ++i) {
+                    if (this->param_list[i] == par.first) break;
                 }
+
+                chr->parameters.append(new Parameter(i, par.second.toInt()));
             }
 
             break;
         }
-    }*/
+    }
 }
 
 void Model::editEffects(QString charName, QList<QString> *effects)

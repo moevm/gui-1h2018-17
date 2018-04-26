@@ -33,3 +33,9 @@ void CombatBeginForm::on_buttonBox_rejected()
     this->startCombat = false;
     this->close();
 }
+
+void CombatBeginForm::on_pushButton_4_clicked()
+{
+    ui->listWidget->addItem(ui->comboBox->currentText());
+    this->participants.append(ui->comboBox->currentText());
+}

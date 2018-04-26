@@ -23,6 +23,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->init_config_box->setVisible(false);
 
     this->model = new Model();
+    connect(this->model, &Model::updated, this, &MainWindow::update);
+
     this->model->addCharacter(new Person("Редиска", "нехороший человек"));
 
     //for debug-проверяю,что параметры прикреплятся к персонажу корректно. вызов- в model
@@ -36,9 +38,9 @@ MainWindow::MainWindow(QWidget *parent) :
     this->model->addCharacter(new Person("Олень","большие рога"));
     this->model->addCharacter(new Person("Гудвин", "волшебник"));
 
-    this->model->addScene(new scene("У дуба", "Описание"));
-    this->model->addScene(new scene("В избушке","Opisaniye"));
-    this->model->addScene(new scene("Сражение", "Битва"));
+    this->model->addScene(new Scene("У дуба", "Описание"));
+    this->model->addScene(new Scene("В избушке","Opisaniye"));
+    this->model->addScene(new Scene("Сражение", "Битва"));
 
     ui->characters_list->clear();
     for (auto chr: *(this->model->getCharacters())) {
@@ -118,7 +120,8 @@ void MainWindow::on_button_editchar_clicked()
     editparm->exec();
 
     if (editparm->saveChanges) {
-        //модифицировать модель
+        this->model->editParameters(ui->characters_list->currentItem()->text(), editparm->parameters);
+        this->model->updated();
     }
 
     delete editparm;
@@ -130,7 +133,7 @@ void MainWindow::on_button_fight_clicked()
     cbegin->exec();
 
     if (cbegin->startCombat) {
-        CombatForm *cmb = new CombatForm();
+        CombatForm *cmb = new CombatForm(cbegin->participants);
         cmb->show();
     }
 
@@ -179,9 +182,13 @@ void MainWindow::on_button_editeffects_clicked()
 
     if (efform->isChanged) {
         this->model->editEffects(charName, efform->effects);
-        this->on_characters_list_itemSelectionChanged();
         this->model->updated();
     }
 
     delete efform;
+}
+
+void MainWindow::update()
+{
+    this->on_characters_list_itemSelectionChanged();
 }

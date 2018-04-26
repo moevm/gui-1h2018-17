@@ -1,10 +1,10 @@
 #include "scene.h"
 
-scene::scene()
+Scene::Scene()
 {
 
 }
-scene::scene(QString name, QString descr) {
+Scene::Scene(QString name, QString descr) {
     this->name = name;
     this->descr = descr;
 }
