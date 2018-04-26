@@ -133,7 +133,7 @@ void MainWindow::on_button_fight_clicked()
     cbegin->exec();
 
     if (cbegin->startCombat) {
-        CombatForm *cmb = new CombatForm();
+        CombatForm *cmb = new CombatForm(cbegin->participants);
         cmb->show();
     }
 

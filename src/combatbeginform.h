@@ -14,6 +14,7 @@ class CombatBeginForm : public QDialog
 
 public:
     bool startCombat;
+    QList<QString> participants;
 
     CombatBeginForm(QList<QString> *characters);
 
@@ -24,6 +25,8 @@ private slots:
     void on_buttonBox_accepted();
 
     void on_buttonBox_rejected();
+
+    void on_pushButton_4_clicked();
 
 private:
     Ui::CombatBeginForm *ui;

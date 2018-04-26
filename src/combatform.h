@@ -2,6 +2,7 @@
 #define COMBATFORM_H
 
 #include <QDialog>
+#include <QList>
 
 namespace Ui {
 class CombatForm;
@@ -13,6 +14,7 @@ class CombatForm : public QDialog
 
 public:
     explicit CombatForm(QWidget *parent = 0);
+    CombatForm(QList<QString>);
     ~CombatForm();
 
 private slots:
@@ -20,6 +22,8 @@ private slots:
 
 private:
     Ui::CombatForm *ui;
+
+    void refresh();
 };
 
 #endif // COMBATFORM_H
