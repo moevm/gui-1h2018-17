@@ -45,6 +45,9 @@ private slots:
 
     void on_button_editeffects_clicked();
 
+public slots:
+    void update();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -15,7 +15,7 @@ class Model : public QObject
 
 private:
 
-    QList<scene *> scenes;
+    QList<Scene *> scenes;
     QList<Person *> characters;
 public:
 
@@ -28,10 +28,10 @@ public:
     QList< QPair<QString, QString> >    *getParameters(QString const &character);
     QList<QString>                      *getEffects(QString const &character);
     QString                             *getCharacterDescription(QString const &character);
-    QString                             *getSceneDescription(QString const &scene);
+    QString                             *getSceneDescription(QString const &Scene);
 
     void                                 addCharacter(Person *character);
-    void                                 addScene(scene *scena);
+    void                                 addScene(Scene *scena);
     void                                 editParameters(QString charName, QList< QPair<QString, QString> > *newParms);
     void                                 editEffects(QString charName, QList<QString> *effects);
 

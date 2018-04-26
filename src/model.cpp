@@ -188,7 +188,7 @@ void Model::addCharacter(Person *character) {
     this->characters.append(character);
 }
 
-void Model::addScene(scene *scena) {
+void Model::addScene(Scene *scena) {
     this->scenes.append(scena);
 }
 
