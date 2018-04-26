@@ -120,7 +120,8 @@ void MainWindow::on_button_editchar_clicked()
     editparm->exec();
 
     if (editparm->saveChanges) {
-        //модифицировать модель
+        this->model->editParameters(ui->characters_list->currentItem()->text(), editparm->parameters);
+        this->model->updated();
     }
 
     delete editparm;
@@ -190,5 +191,4 @@ void MainWindow::on_button_editeffects_clicked()
 void MainWindow::update()
 {
     this->on_characters_list_itemSelectionChanged();
-    this->on_scenes_list_itemSelectionChanged();
 }
