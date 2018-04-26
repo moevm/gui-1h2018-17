@@ -4,10 +4,11 @@
 #include <QString>
 #include "effect.h"
 
-class scene
+class Scene
 {
 public:
-    scene();
+    Scene();
+    Scene(QString name, QString descr);
     QString name;
     QString descr;
     QList<Effect>* effects;
