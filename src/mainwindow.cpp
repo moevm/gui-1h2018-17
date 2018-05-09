@@ -136,7 +136,7 @@ void MainWindow::on_button_fight_clicked()
     CombatBeginForm *cbegin = new CombatBeginForm(this->model->getCharacters());
     cbegin->exec();
 
-    if (cbegin->startCombat) {
+    if (cbegin->startCombat && !cbegin->participants.empty()) {
         CombatForm *cmb = new CombatForm(cbegin->participants, this->model);
         cmb->show();
     }

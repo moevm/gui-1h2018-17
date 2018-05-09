@@ -1,6 +1,8 @@
 #include "combatform.h"
 #include "ui_combatform.h"
 
+#include "combatbeginform.h"
+
 CombatForm::CombatForm(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CombatForm)
@@ -16,6 +18,7 @@ CombatForm::CombatForm(QList<QString> participants, Model *model) : CombatForm()
     this->model = model;
     connect(model, Model::updated, this, CombatForm::formUpdate);
 
+    current = 0;
     ui->listWidget->setCurrentRow(0);
     this->refresh();
 }
@@ -36,6 +39,8 @@ void CombatForm::formUpdate()
 }
 
 void CombatForm::refresh() {
+    ui->listWidget->setCurrentRow(this->current);
+
     QString text = "";
     QString charName = ui->listWidget->currentItem()->text();
 
@@ -60,4 +65,29 @@ void CombatForm::refresh() {
     }
 
     ui->plainTextEdit->document()->setPlainText(text);
+}
+
+void CombatForm::on_pushButton_clicked()
+{
+    this->current++;
+
+    if (this->current == ui->listWidget->count()) {
+        this->current = 0;
+
+        if (this->model->dynamicInitiative) {
+            CombatBeginForm *cbform = new CombatBeginForm(this->model->getCharacters());
+            cbform->exec();
+
+            if (cbform->startCombat && !cbform->participants.empty()) {
+                ui->listWidget->clear();
+                for (auto participant: cbform->participants) {
+                    ui->listWidget->addItem(participant);
+                }
+            }
+
+            delete cbform;
+        }
+    }
+
+    this->refresh();
 }
