@@ -24,6 +24,8 @@ public:
     QString param_list[4] = {"хитрость", "убийственность", "магия", "сила"};
     int param_length = 4;
 
+    bool dynamicInitiative;
+
     QList<QString>                      *getCharacters();
     QList<QString>                      *getScenes();
     QList< QPair<QString, QString> >    *getParameters(QString const &character);

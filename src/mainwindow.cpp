@@ -92,6 +92,8 @@ void MainWindow::on_dynamic_init_radio_clicked()
     ui->param_list_init->setEnabled(true);
     ui->ok_init_config->setEnabled(true);
     ui->cancel_init_config->setEnabled(true);
+
+    this->model->dynamicInitiative = true;
 }
 
 void MainWindow::on_static_init_radio_clicked()
@@ -100,6 +102,8 @@ void MainWindow::on_static_init_radio_clicked()
     ui->param_list_init->setEnabled(false);
     ui->ok_init_config->setEnabled(false);
     ui->cancel_init_config->setEnabled(false);
+
+    this->model->dynamicInitiative = false;
 }
 
 void MainWindow::on_delete_param_clicked()
@@ -133,7 +137,7 @@ void MainWindow::on_button_fight_clicked()
     cbegin->exec();
 
     if (cbegin->startCombat) {
-        CombatForm *cmb = new CombatForm(cbegin->participants);
+        CombatForm *cmb = new CombatForm(cbegin->participants, this->model);
         cmb->show();
     }
 
