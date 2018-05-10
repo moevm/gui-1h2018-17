@@ -5,6 +5,7 @@
 Model::Model(QObject *parent) : QObject(parent)
 {
     this->characters.clear();
+    this->dynamicInitiative = false;
 }
 
 QList<QString> *Model::getCharacters(){
